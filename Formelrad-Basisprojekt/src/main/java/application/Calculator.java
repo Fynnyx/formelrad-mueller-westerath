@@ -49,16 +49,5 @@ public class Calculator {
 		 */
 	}
 
-	public double pAusUundI (double u, double i) {
-		return u*i;
-	}
-
-	public double pAusUundR (double u, double r) {
-		return (u*u)/r;
-	}
-
-	public double pAusRundI (double r, double i) {
-		return r*i*i;
-	}
 	
 }
