@@ -94,4 +94,8 @@ public class Calculator {
 	public double RAusPundI (double p, double i){
 		return p/(i*i);
 	}
+
+	public double RAusUundP (double u, double p){
+		return (u*u)/p;
+	}
 }
