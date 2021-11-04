@@ -44,9 +44,17 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		/* Hier auf Grund der vorhanden Werte entscheiden
-		 * welche Methode unten aufgerufen werden muss.
-		 */
+		double result;
+
+		if (getSpannung() > 0 && getStrom() > 0) {
+			result = pAusUundI(getSpannung(), getStrom());
+		} else if (getSpannung() > 0 && getWiderstand() > 0) {
+			result = pAusUundR(getSpannung(), getWiderstand());
+		} else if (getWiderstand() > 0 && getStrom() > 0) {
+			result = pAusRundI(getWiderstand(), getStrom());
+		} else {
+			System.out.println("Something went wrong");
+		}
 	}
 
 	public double pAusUundI (double u, double i) {
