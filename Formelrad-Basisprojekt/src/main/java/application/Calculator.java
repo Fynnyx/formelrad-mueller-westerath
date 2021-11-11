@@ -56,7 +56,7 @@ public class Calculator {
 
 		} else if (getSpannung() > 0 && getLeistung() > 0){
 			widerstand = RAusUundP(getSpannung(), getLeistung());
-			strom = IAusPundU(getSpannung(), getLeistung())
+			strom = IAusPundU(getLeistung(), getSpannung());
 
 		} else if (getWiderstand() > 0 && getStrom() > 0) {
 			leistung = PAusRundI(getWiderstand(), getStrom());
