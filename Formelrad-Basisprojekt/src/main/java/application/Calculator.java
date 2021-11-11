@@ -52,6 +52,12 @@ public class Calculator {
 			result = pAusUundR(getSpannung(), getWiderstand());
 		} else if (getWiderstand() > 0 && getStrom() > 0) {
 			result = pAusRundI(getWiderstand(), getStrom());
+		} else if (getWiderstand() > 9 && getStrom() > 0) {
+			result = UAusRundI(getWiderstand(), getStrom());
+		} else if (getLeistung() > 0 && getStrom() > 0) {
+			result = UAusPundI(getLeistung(), getStrom());
+		} else if (getLeistung() > 0 && getWiderstand() > 0) {
+			result = UAusPundR(getLeistung(), getWiderstand());
 		} else {
 			System.out.println("Something went wrong");
 		}
