@@ -52,9 +52,11 @@ public class Calculator {
 
 		} else if (getSpannung() > 0 && getWiderstand() > 0) {
 			leistung = PAusUundR(getSpannung(), getWiderstand());
+			strom = IAusUundR(getSpannung(), getWiderstand());
 
 		} else if (getSpannung() > 0 && getLeistung() > 0){
 			widerstand = RAusUundP(getSpannung(), getLeistung());
+			strom = IAusPundU(getSpannung(), getLeistung())
 
 		} else if (getWiderstand() > 0 && getStrom() > 0) {
 			leistung = PAusRundI(getWiderstand(), getStrom());
@@ -66,6 +68,7 @@ public class Calculator {
 
 		} else if (getLeistung() > 0 && getWiderstand() > 0) {
 			spannung = UAusPundR(getLeistung(), getWiderstand());
+			strom = IAusPundR(getLeistung(), getWiderstand());
 		} else {
 			System.out.println("Something went wrong");
 		}
