@@ -47,25 +47,42 @@ public class Calculator {
 		double result;
 
 		if (getSpannung() > 0 && getStrom() > 0) {
-			result = pAusUundI(getSpannung(), getStrom());
+			leistung = PAusUundI(getSpannung(), getStrom());
+			widerstand = RAusUundI(getSpannung(), getStrom());
+
 		} else if (getSpannung() > 0 && getWiderstand() > 0) {
-			result = pAusUundR(getSpannung(), getWiderstand());
+			leistung = PAusUundR(getSpannung(), getWiderstand());
+			strom = IAusUundR(getSpannung(), getWiderstand());
+
+		} else if (getSpannung() > 0 && getLeistung() > 0){
+			widerstand = RAusUundP(getSpannung(), getLeistung());
+			strom = IAusPundU(getLeistung(), getSpannung());
+
 		} else if (getWiderstand() > 0 && getStrom() > 0) {
-			result = pAusRundI(getWiderstand(), getStrom());
+			leistung = PAusRundI(getWiderstand(), getStrom());
+			spannung = UAusRundI(getWiderstand(), getStrom());
+
+		} else if (getLeistung() > 0 && getStrom() > 0) {
+			spannung = UAusPundI(getLeistung(), getStrom());
+			widerstand = RAusPundI(getLeistung(), getStrom());
+
+		} else if (getLeistung() > 0 && getWiderstand() > 0) {
+			spannung = UAusPundR(getLeistung(), getWiderstand());
+			strom = IAusPundR(getLeistung(), getWiderstand());
 		} else {
 			System.out.println("Something went wrong");
 		}
 	}
 
-	public double pAusUundI (double u, double i) {
+	public double PAusUundI (double u, double i) {
 		return u*i;
 	}
 
-	public double pAusUundR (double u, double r) {
+	public double PAusUundR (double u, double r) {
 		return (u*u)/r;
 	}
 
-	public double pAusRundI (double r, double i) {
+	public double PAusRundI (double r, double i) {
 		return r*i*i;
 	}
 
