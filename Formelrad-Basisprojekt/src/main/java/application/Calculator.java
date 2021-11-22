@@ -43,6 +43,23 @@ public class Calculator {
 				", widerstand="	+ widerstand + "]";
 	}
 
+	int empty = 0;
+	if (getLeistung() > 0){
+		empty = empty + 1;
+	}
+	if(getSpannung() > 0){
+		empty = empty + 1;
+	}
+	if(getStrom() > 0){
+		empty = empty + 1;
+	}
+	if(getWiderstand() > 0){
+		empty = empty + 1;
+	}
+	if(empty > 2){
+		console.log("Warning! More than 2 inputs!")
+	}
+
 	public void calculate() {
 		double result;
 
